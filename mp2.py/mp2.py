@@ -9,7 +9,6 @@ def main():
 
     a=input("Select and Option: ")
 
-    participants_log=[]
     chess=["Jessica", "Ryan"]
     tennis=["Kelly"]
     pottery=["Bryan", "Shelly", "Linda"]
@@ -30,13 +29,17 @@ def main():
                 print("Username not valid. Opting out of Option 1") 
 
         class Participant:
+             participants_log=[]
              def __init__(self, name, last_name, occupation, age):
                   self.name=name
-                  
-        name=input("What is your first name: ").capitalize()
-        last_name=input("What is your laste name: ").capitzalize()
-        occupation=input("What is your occupation? ")
-
+                  self.last_name=last_name
+                  self.occupation=occupation
+                  self.age=age
+             def add_trick(self, name):
+                  self.name=name
+             
+             name=input("What is your first name: ").capitalize()
+      
 if __name__=="__main__":
     main()
 
