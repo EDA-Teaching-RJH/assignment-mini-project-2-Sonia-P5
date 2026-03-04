@@ -1,7 +1,7 @@
 def main():
     print("---WELCOME TO THE PORTAL---")
     print("Clubs available at the Smile Factory Facility")
-    print("Chess, Tennis, Pottery, Archery, and Dance")
+    print("Hockey, Tennis, Basketball, Football, and Dance")
     print("1. Create an Account")
     print("2. Overview of each club")
     print("3. Select a club(s) (Maximum 2)")
@@ -9,14 +9,14 @@ def main():
 
     a=input("Select and Option: ")
 
-    chess=["Jessica", "Ryan"]
-    tennis=["Kelly"]
-    pottery=["Bryan", "Shelly", "Linda"]
-    archery=[]
-    dance=["Kai", "Zayn", "Cole", "Lloyd"]
+    Hockey=["Jessica", "Ryan"]
+    Tennis=["Kelly"]
+    Basketball=["Bryan", "Shelly", "Linda"]
+    Football=[]
+    Dance=["Kai", "Zayn", "Cole", "Lloyd"]
 
     import re 
-    if a=="1":
+    if a=="1": 
         print("OPTION SELECTED: Create an account")
         print("You must create a username. The username must begin with a number and end with .SmileFF. It must be minimum 8 characters. ")
         username=str(input("Enter username:  "))
@@ -26,20 +26,12 @@ def main():
         if re.search(r"^\d.+\.+SmileFF$", username) and len(username)>=8: 
             print("Valid Username")
         else:
-                print("Username not valid. Opting out of Option 1") 
+                print("Username not valid. Opting out of Option 1")
+        print("Extra informatio Needed before making your account")
+                
 
-        class Participant:
-             participants_log=[]
-             def __init__(self, name, last_name, occupation, age):
-                  self.name=name
-                  self.last_name=last_name
-                  self.occupation=occupation
-                  self.age=age
-             def add_trick(self, name):
-                  self.name=name
-             
-             name=input("What is your first name: ").capitalize()
-      
+        
+        
 if __name__=="__main__":
     main()
 

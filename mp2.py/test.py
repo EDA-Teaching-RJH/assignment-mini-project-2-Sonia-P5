@@ -1,12 +1,17 @@
-class Participant:
-    def __init__(self, name, last_name, occupation, age):
+class Student:
+    def __init__(self, name, degree):
+        if not name:
+            raise ValueError("Missing name")
+        if degree not in ["ECE", "BIO", "MECH", "EEE"]:
+            raise ValueError("Invalid degree")
         self.name=name
-        self.last_name=last_name
-        self.occupation=occupation
-        self.age=age
-participant1=Participant(Sonia, Piroso, )
+        self.degree=degree
 
-print(f"User's first name: {Participant.name}")
-print(f"User's last name: {Participant.last_name}")
-print(f"User's occupation: {Participant.occupation}")
-print(f"User's occupation: {Participant.age}")
+def main():
+    student=get_student()
+    print(f"{student.name} from {student.degree}")
+
+def get_student():
+    name=input("Name: ")
+    degree=input("degree: ")
+    return Student(name, degree)
