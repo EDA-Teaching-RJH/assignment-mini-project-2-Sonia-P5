@@ -1,0 +1,6 @@
+print("---WELCOME TO THE PORTAL---")
+print("Clubs availanle")
+print("Chess, Tennis, Pottery, Archery, Dance")
+print("1. Create an Account")
+print("2. Overview of each club")
+print("3. Select a club(s) (Maximum 2)")
