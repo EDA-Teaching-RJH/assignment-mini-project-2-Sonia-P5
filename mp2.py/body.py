@@ -56,7 +56,8 @@ def main():
            
            if __name__=="__main__":
             collecting()
-                 
+
+           def form_username():    
             import re
             print("You must create a username. The username must begin with a number and end with the .SmileFF domain. It must be minimum 8 characters. ")
             while True:
@@ -70,9 +71,12 @@ def main():
 
             usernames.append(username)
             print("Account Succesfully Created. Information stored")
+           if __name__=="__main__":
+              form_username()
 
         if __name__=="__main__":       
          create_new_user()
+
 
     if __name__=="__main__":
      options()
