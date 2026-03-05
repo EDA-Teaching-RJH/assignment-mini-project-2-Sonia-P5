@@ -3,11 +3,10 @@ def main():
     Hockey=[]
     Tennis=[]
     Basketball=[]
-    Football=[]
     def options():
         print("---WELCOME TO THE PORTAL---")
         print("Clubs available at the Smile Factory Facility")
-        print("Hockey, Tennis, Basketball, and Football")
+        print("Hockey, Tennis, and Basketball")
         print("MENU")
         print("1. Create an Account")
         print("2. Overview of each club")
