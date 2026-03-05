@@ -12,7 +12,35 @@ def main():
     
         a=input("Select option: ")
 
-    options()
+        def create_new_user():
+           import re
+           if a=="1":
+              name=input("What is your first name: ").capitalize()
+              while name=="":
+                 print("This is a mandatory field")
+                 name=input("What is your first name: ").capitalize()
+
+              last_name=input("What is your last name: ").capitalize()
+              while last_name=="":
+                 print("This is a mandatory field")
+                 last_name=input("What is your last name: ").capitalize()
+
+              occupation=input("What is your occupation: ")
+              while occupation=="":
+                 print("This is a mandatory field")
+                 occupation=input("What is your occupation: ")
+              try:
+                 age=int(input("What is your age: "))
+              except ValueError:
+                 print("Use numbers to type your age")
+                 age=int(input("What is your age: "))
+              
+              
+
+        create_new_user()
+
+    if __name__=="__main__":
+     options()
 
 if __name__=="__main__":
     main()
