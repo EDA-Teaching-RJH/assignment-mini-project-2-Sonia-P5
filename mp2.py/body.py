@@ -15,8 +15,9 @@ def main():
         print("5. Exit")
     
         a=input("Select option: ")
-
-        def create_new_user():
+        
+        if a=="1":
+          def create_new_user():
            class User:
               def __init__(self, name, last_name, nationality, age):
                  self.name=name
