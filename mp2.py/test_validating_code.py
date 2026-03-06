@@ -1,15 +1,4 @@
-import re
+from validating_code import form_username
 
-def form_username(username):    
-   print("You must create a username. The username must begin with a number and end with the .SmileFF domain. It must be minimum 8 characters. ")
-   while True:
-      username=str(input("Enter username: "))
-      if re.search(r"^\d.+\.+SmileFF$", username) and len(username)>=8:
-         return True
-      return False
-      
-
-
-
-if __name__=="__main__":
-      form_username()
+def test_form_username():
+    assert form_username("1yogabagaba.SmileFF")==True
