@@ -84,11 +84,18 @@ def main():
          
         if a=="2":
            def view_clubs():
-              txt_data="I like pizza!"
-              file_path="output.txt"
-              with open(file_path, "w") as file:
-                 file.write(txt_data)
-                 print(f"txt file '{file_path}' was created")
+              b=input("Which club would you like to view? Click H for Hockey, T for tennis, and B for basketball: ")
+              
+              if b=="H":
+                 with open("members_of_hockey.txt", "r") as f:
+                    f_contents=f.read()
+                    print(f_contents, end="")
+              elif b=="B":
+               with open("members_of_basketball.txt", "r") as f:
+                  f_contents=f.read()
+                  print(f_contents, end="")
+              
+
            view_clubs()
               
 
