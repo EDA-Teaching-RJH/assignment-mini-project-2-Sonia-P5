@@ -1,3 +1,4 @@
+import csv
 def main():
     usernames=[]
     Hockey=[]
@@ -65,18 +66,32 @@ def main():
                username=str(input("Enter username: "))
                if re.search(r"^\d.+\.+SmileFF$", username) and len(username)>=8:
                   print("Valid Username")
+                  with open("Database.csv", "a") as file:
+                     writer=csv.DictWriter(file, fieldnames=["User"])
+                     writer.writerow({"User": username})
                   break
                else:
                   print("Username not valid.")
                   continue
 
-            usernames.append(username)
-            print("Account Succesfully Created. Information stored")
+            print("Account succesfully created. Data Stored")
+
            if __name__=="__main__":
               form_username()
 
-        if __name__=="__main__":       
-         create_new_user()
+          if __name__=="__main__":       
+           create_new_user()
+         
+        if a=="2":
+           def view_clubs():
+              txt_data="I like pizza!"
+              file_path="output.txt"
+              with open(file_path, "w") as file:
+                 file.write(txt_data)
+                 print(f"txt file '{file_path}' was created")
+           view_clubs()
+              
+
 
 
     if __name__=="__main__":
