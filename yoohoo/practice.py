@@ -1,3 +1,1 @@
-with open("members_of_basketball.txt", "r") as f:
-    f_contents=f.read()
-    print(f_contents, end="")
+members_of_tennis=open("members_of_tennis.txt", "a+")
