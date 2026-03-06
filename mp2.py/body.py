@@ -1,9 +1,6 @@
 import csv
 def main():
     usernames=[]
-    Hockey=[]
-    Tennis=[]
-    Basketball=[]
     def options():
         print("---WELCOME TO THE PORTAL---")
         print("Clubs available at the Smile Factory Facility")
@@ -13,7 +10,8 @@ def main():
         print("2. Overview of each club")
         print("3. Select a club ")
         print("4. Pay subscription for club")
-        print("5. Exit")
+        print("5. Customer Feedback")
+        print("6. Exit")
     
         a=input("Select option: ")
         
@@ -73,7 +71,7 @@ def main():
                else:
                   print("Username not valid.")
                   continue
-
+            usernames.append(username)
             print("Account succesfully created. Data Stored")
 
            if __name__=="__main__":
@@ -84,41 +82,89 @@ def main():
          
         if a=="2":
            def view_clubs():
-              
-              class Clubs:
+              def displaying_info():
+               class Clubs:
                  def __init__(self, name):
                     self.name=name
                   
                  def location(self):
                     print(f"This club is located at the Smile Factory Facility")
-
-              b=input("Which club would you like to view? Click H for Hockey, T for tennis, and B for basketball: ")
               
-              if b=="H":
+               class Hockey(Clubs):
+                 def price(self):
+                    print("$70")
+               
+               class Tennis(Clubs):
+                 def price(self):
+                    print("$30")
+            
+               class Basketball(Clubs):
+                 def price(self):
+                    print("$20")
+            
+               hockey=Hockey("Hockey")
+               tennis=Tennis("Tennis")
+               basketball=Basketball("Basketball")
+
+               print(hockey.name)
+               hockey.price()
+               hockey.location()
+
+               print("-----")
+
+               print(tennis.name)
+               tennis.price()
+               tennis.location()
+
+               print("-----")
+
+               print(basketball.name)
+               basketball.price()
+               basketball.location()
+
+              displaying_info()
+              
+              def showing_info():
+               b=input("Which club would you like to view their members? Click H for Hockey, T for tennis, and B for basketball: ")
+              
+               if b=="H":
                  with open("members_of_hockey.txt", "r") as f:
                     f_contents=f.read()
                     print(f_contents, end="")
 
-              elif b=="T":
+               elif b=="T":
                  with open("members_of_tennis.txt", "r") as f:
                     f_contents=f.read()
                     print(f_contents, end="")
 
-              elif b=="B":
-               with open("members_of_basketball.txt", "r") as f:
+               elif b=="B":
+                with open("members_of_basketball.txt", "r") as f:
                   f_contents=f.read()
                   print(f_contents, end="")
               
-              else:
+               else:
                  print("Invalid input")
                  b=input("Which club would you like to view? Click H for Hockey, T for tennis, and B for basketball: ")
-              
+
+              if __name__=="__main__":
+                 showing_info()
+           
+
+           if __name__=="__main__":  
+              view_clubs()
+
+        if a=="3":
+           def sign_up_to_club():
+            print("Signed Up Usernames")
+            with open("Database.csv", "r") as f:
+                    f_contents=f.read()
+                    print(f_contents, end="")
+            log_in=input("Please enter your username: ")
 
 
-           view_clubs()
-              
-
-
+           sign_up_to_club()
+           
+           
 
     if __name__=="__main__":
      options()
