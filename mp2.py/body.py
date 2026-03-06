@@ -11,7 +11,7 @@ def main():
         print("MENU")
         print("1. Create an Account")
         print("2. Overview of each club")
-        print("3. Select a club(s) (Maximum 2)")
+        print("3. Select a club ")
         print("4. Pay subscription for club")
         print("5. Exit")
     
@@ -85,6 +85,13 @@ def main():
         if a=="2":
            def view_clubs():
               
+              class Clubs:
+                 def __init__(self, name):
+                    self.name=name
+                  
+                 def location(self):
+                    print(f"This club is located at the Smile Factory Facility")
+
               b=input("Which club would you like to view? Click H for Hockey, T for tennis, and B for basketball: ")
               
               if b=="H":
@@ -105,8 +112,8 @@ def main():
               else:
                  print("Invalid input")
                  b=input("Which club would you like to view? Click H for Hockey, T for tennis, and B for basketball: ")
-
               
+
 
            view_clubs()
               
