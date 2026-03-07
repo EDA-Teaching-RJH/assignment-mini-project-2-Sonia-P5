@@ -1,6 +1,5 @@
 import csv
 def main():
-    usernames=[]
     def options():
         print("---WELCOME TO THE PORTAL---")
         print("Clubs available at the Smile Factory Facility")
@@ -71,7 +70,6 @@ def main():
                else:
                   print("Username not valid.")
                   continue
-            usernames.append(username)
             print("Account succesfully created. Data Stored")
 
            if __name__=="__main__":
@@ -144,7 +142,7 @@ def main():
               
                else:
                  print("Invalid input")
-                 b=input("Which club would you like to view? Click H for Hockey, T for tennis, and B for basketball: ")
+                 b=input("Which club would you like to view? Type H for Hockey, T for tennis, and B for basketball: ")
 
               if __name__=="__main__":
                  showing_info()
@@ -152,19 +150,34 @@ def main():
 
            if __name__=="__main__":  
               view_clubs()
-
+              
         if a=="3":
-           def sign_up_to_club():
-            print("Signed Up Usernames")
-            with open("Database.csv", "r") as f:
-                    f_contents=f.read()
-                    print(f_contents, end="")
-            log_in=input("Please enter your username: ")
+               def sign_up_to_club():
+                  print("Signed Up Usernames")
+                  with open("Database.csv", "r") as f:
+                     f_contents=f.read()
+                     print(f_contents, end="")
+            
+                  log_in=str(input("Please enter your username: "))
 
+                  if log_in in open("Database.csv").read():
+                     print("Username recognized. Few steps to go")
+                     call=input("Enter name or nickname you would like to be referred to as: ")
+                  else:
+                     print("Username NOT recognized. You must create an account or type a valid username to sign up to a club. Exiting programme")
 
-           sign_up_to_club()
-           
-           
+                  joining=input("What club would you like to join? Type H for Hockey, T for tennis, and B for basketball: ")
+
+                  call=input("Enter name or nickname you would like to be referred to as: ")
+                  if joining=="H":
+                     file=open("members_of_hockey.txt", "w")
+                     y=[call]
+                     file.writelines(y)
+                     file.close
+                  
+
+               sign_up_to_club()
+
 
     if __name__=="__main__":
      options()
