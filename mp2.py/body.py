@@ -162,18 +162,20 @@ def main():
 
                   if log_in in open("Database.csv").read():
                      print("Username recognized. Few steps to go")
+                     joining=input("What club would you like to join. Type H for Hockey, T for tennis, and B for basketball:  ")
                      call=input("Enter name or nickname you would like to be referred to as: ")
+                     if joining=="H":
+                        file=open("members_of_hockey.txt", "a")
+                        y=[call]
+                        file.writelines(f"{y} \n")
+                        file.close
+
                   else:
                      print("Username NOT recognized. You must create an account or type a valid username to sign up to a club. Exiting programme")
 
-                  joining=input("What club would you like to join? Type H for Hockey, T for tennis, and B for basketball: ")
+                  
 
-                  call=input("Enter name or nickname you would like to be referred to as: ")
-                  if joining=="H":
-                     file=open("members_of_hockey.txt", "w")
-                     y=[call]
-                     file.writelines(y)
-                     file.close
+                  
                   
 
                sign_up_to_club()
