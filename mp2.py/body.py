@@ -188,15 +188,37 @@ def main():
 
                   else:
                      print("Username NOT recognized. You must create an account or type a valid username to sign up to a club. Exiting programme")
-
-                  
-
-                  
-                  
-
                sign_up_to_club()
 
 
+
+        if a=="4":
+           def pay():
+            import re
+            print("Signed Up Usernames")
+            with open("Database.csv", "r") as f:
+               f_contents=f.read()
+               print(f_contents, end="")
+            
+            we=str(input("Please enter your username: "))
+
+            if we in open("Database.csv").read():
+               print("Username recognized")
+            
+            more=input("What club would you like to pay for:  Type H for Hockey, T for tennis, and B for basketball:")
+            nick_name=input("What name did you put in your initial sign up?")
+
+            if more=="H":
+               with open("members_of_hockey.txt", "r") as f:
+                  f_contents=f.read()
+                  print(f_contents, end="")
+               
+               if nick_name in open("members_of_hockey.txt").read():
+                  print("Moving Forward")
+               else:
+                  print("Name not recognized. Exiting Programme")
+
+           pay()
     if __name__=="__main__":
      options()
 
