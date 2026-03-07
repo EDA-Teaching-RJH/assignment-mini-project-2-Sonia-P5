@@ -8,7 +8,7 @@ def main():
         print("1. Create an Account")
         print("2. Overview of each club")
         print("3. Select a club ")
-        print("4. Pay subscription for club")
+        print("4. Donate")
         print("5. Help us make improvements")
         print("6. Exit")
     
@@ -87,18 +87,19 @@ def main():
                   
                  def location(self):
                     print(f"This club is located at the Smile Factory Facility")
+                    print("Membership is free")
               
                class Hockey(Clubs):
                  def price(self):
-                    print("$70")
+                    print("Training happens on Mondays and Fridays!")
                
                class Tennis(Clubs):
                  def price(self):
-                    print("$30")
+                    print("Training happens on Thursdays and Saturdays!")
             
                class Basketball(Clubs):
                  def price(self):
-                    print("$20")
+                    print("Training happens on Sundays and Tuesdays!")
             
                hockey=Hockey("Hockey")
                tennis=Tennis("Tennis")
@@ -190,35 +191,44 @@ def main():
                      print("Username NOT recognized. You must create an account or type a valid username to sign up to a club. Exiting programme")
                sign_up_to_club()
 
-
-
         if a=="4":
-           def pay():
+         def donate():
+            yok=input("How would you like to pay: ")
+            class Donation:
+               def __init__(self, message):
+                  self.message=message
+            kc=Donation(f"Payment method: {yok}")
+            print(kc.message)
+
+         if __name__=="__main__":
+            donate()
+         
+         def pay():
             import re
-            print("Signed Up Usernames")
-            with open("Database.csv", "r") as f:
-               f_contents=f.read()
-               print(f_contents, end="")
+
+            pay_up=input("Please transfer: ")
+            if re.search("^\$.+$", pay_up):
+               print("Payment accepted. Thank you")
+            else:
+               print("Invalid Input")
+         if __name__=="__main__":
+            pay()
+
+        if a=="5":
+           def feedback():
+              import re
+              hashtag=str(input(("We're trying to promote our facility, we could use your help! Could you reccomend you come up with a hashtag we can use on social media? Please type here, don't forget to include the hashtag! Please don't include numbers:  ")))
+              if re.search(r"^#.+$"):
+                 print("yay")
+
             
-            we=str(input("Please enter your username: "))
-
-            if we in open("Database.csv").read():
-               print("Username recognized")
+              
+           if __name__=="__main__":
+              feedback()
             
-            more=input("What club would you like to pay for:  Type H for Hockey, T for tennis, and B for basketball:")
-            nick_name=input("What name did you put in your initial sign up?")
-
-            if more=="H":
-               with open("members_of_hockey.txt", "r") as f:
-                  f_contents=f.read()
-                  print(f_contents, end="")
-               
-               if nick_name in open("members_of_hockey.txt").read():
-                  print("Moving Forward")
-               else:
-                  print("Name not recognized. Exiting Programme")
-
-           pay()
+         
+         
+                  
     if __name__=="__main__":
      options()
 
