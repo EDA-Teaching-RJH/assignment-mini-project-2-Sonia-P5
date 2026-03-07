@@ -9,7 +9,7 @@ def main():
         print("2. Overview of each club")
         print("3. Select a club ")
         print("4. Pay subscription for club")
-        print("5. Customer Feedback")
+        print("5. Help us make improvements")
         print("6. Exit")
     
         a=input("Select option: ")
@@ -169,6 +169,22 @@ def main():
                         y=[call]
                         file.writelines(f"{y} \n")
                         file.close
+
+                     elif joining=="T":
+                        files=open("members_of_tennis.txt", "a")
+                        y=[call]
+                        files.writelines(f"{y} \n")
+                        files.close
+
+                     elif joining=="B":
+                        filessss=open("members_of_basketball", "a")
+                        y=[call]
+                        filessss.writelines(f"{y} \n")
+                        filessss.close
+                     
+                     else:
+                        print("Invalid Input")
+                        print("Exiting Programme")
 
                   else:
                      print("Username NOT recognized. You must create an account or type a valid username to sign up to a club. Exiting programme")

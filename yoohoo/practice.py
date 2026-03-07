@@ -1,5 +1,3 @@
-log_in=str(input(" "))
-if log_in in open("Database.csv").read():
-    print("Yay")
-else:
-    print("nay")
+f=open("membersssss_of_basketball.txt", "w")
+f.write("Members of Basketball")
+f.close()
