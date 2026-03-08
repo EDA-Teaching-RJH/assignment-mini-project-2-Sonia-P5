@@ -155,6 +155,7 @@ def main():
               
         elif a=="3":
                import random
+               import cowsay
                def sign_up_to_club():
                   print("Signed Up Usernames")
                   with open("Database.csv", "r") as f:

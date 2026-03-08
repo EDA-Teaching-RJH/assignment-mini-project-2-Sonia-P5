@@ -1,7 +1,4 @@
-import re
-
-email=input((" "))
-if re.search(r"^\w+@\w.+\.(ac.uk|gov.uk)$", email):
-    print("good")
-else:
-    print("nay")
+import cowsay
+cowsay.dragon("Welcome to the Hockey Club!")
+cowsay.trex("Welcome to the Tennis Club!")
+cowsay.stegosaurus("Welcome to the Basketball Club!")
