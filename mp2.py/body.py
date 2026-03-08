@@ -10,7 +10,7 @@ def main():
         print("3. Select a club ")
         print("4. Donate")
         print("5. Help us make improvements")
-        print("6. Exit")
+
     
         a=input("Select option: ")
         
@@ -78,7 +78,7 @@ def main():
           if __name__=="__main__":       
            create_new_user()
          
-        if a=="2":
+        elif a=="2":
            def view_clubs():
               def displaying_info():
                class Clubs:
@@ -152,7 +152,7 @@ def main():
            if __name__=="__main__":  
               view_clubs()
               
-        if a=="3":
+        elif a=="3":
                def sign_up_to_club():
                   print("Signed Up Usernames")
                   with open("Database.csv", "r") as f:
@@ -191,7 +191,7 @@ def main():
                      print("Username NOT recognized. You must create an account or type a valid username to sign up to a club. Exiting programme")
                sign_up_to_club()
 
-        if a=="4":
+        elif a=="4":
          def donate():
             yok=input("How would you like to pay: ")
             class Donation:
@@ -214,21 +214,37 @@ def main():
          if __name__=="__main__":
             pay()
 
-        if a=="5":
-           def feedback():
-              import re
-              hashtag=str(input(("We're trying to promote our facility, we could use your help! Could you reccomend you come up with a hashtag we can use on social media? Please type here, don't forget to include the hashtag! Please don't include numbers:  ")))
-              if re.search(r"^#.+$"):
-                 print("yay")
+        elif a=="5":
+           def feeedback():
+              def feedback():
+               import re
+               hashtag=str(input(("We're trying to promote our facility, we could use your help! Reccomend a hashtag we could use on social media! Make sure to include a hashtag. Either end the hashtag in SmileFF, hockeySmileFF, tennisSmileFF, or basketballSmileFF depending on what facility you want your hashtag to apply to. Please do not include any numbers:   ")))
+               if re.search(r"^#\D.+(SmileFF|hockeySmileFF|tennisSmileFF|basketballSmileFF)$", hashtag):
+                 print("Thank you for your idea! We'll review it.")
+               else:
+                 print("Wrong format for hashtag. You have one more attempt before we proceed to the next section")
+               
+              if __name__=="__main__":
+               feedback()
+            
+              def comment():
+                commentss=input("Please type your feedback here: ")
+                file=open("Feedback.csv", "a")
+                x=[commentss]
+                file.writelines(f"{x} \n")
+                file.close
 
-            
-              
-           if __name__=="__main__":
-              feedback()
-            
-         
-         
-                  
+                print("Thank you!")
+                with open("Feedback.csv", "r") as f:
+                   f_contents=f.read()
+                   print(f_contents, end="")
+              comment()
+                 
+           feeedback()
+
+        else:
+           print("Invalid.")
+                    
     if __name__=="__main__":
      options()
 
