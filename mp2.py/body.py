@@ -46,6 +46,7 @@ def main():
               while True:
                  try:
                     age=int(input("What is your age: "))
+      
                     break
                  except ValueError:
                     print("Use numbers to type your age")
@@ -153,6 +154,7 @@ def main():
               view_clubs()
               
         elif a=="3":
+               import random
                def sign_up_to_club():
                   print("Signed Up Usernames")
                   with open("Database.csv", "r") as f:
@@ -170,18 +172,24 @@ def main():
                         y=[call]
                         file.writelines(f"{y} \n")
                         file.close
+                        digit=random.randint(1, 100)
+                        print(f"Congrats you're signed up! You're jersey number will be {digit}")
 
                      elif joining=="T":
                         files=open("members_of_tennis.txt", "a")
                         y=[call]
                         files.writelines(f"{y} \n")
                         files.close
+                        digit=random.randint(1, 100)
+                        print(f"Congrats you're signed up! You're jersey number will be {digit}")
 
                      elif joining=="B":
                         filessss=open("members_of_basketball", "a")
                         y=[call]
                         filessss.writelines(f"{y} \n")
                         filessss.close
+                        digit=random.randint(1, 100)
+                        print(f"Congrats you're signed up! You're jersey number will be {digit}")
                      
                      else:
                         print("Invalid Input")
@@ -234,7 +242,7 @@ def main():
                 file.writelines(f"{x} \n")
                 file.close
 
-                print("Thank you!")
+                print("Thank you! Previous feedback includes: ")
                 with open("Feedback.csv", "r") as f:
                    f_contents=f.read()
                    print(f_contents, end="")
