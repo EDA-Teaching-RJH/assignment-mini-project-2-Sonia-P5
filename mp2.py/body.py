@@ -1,4 +1,5 @@
 import csv
+from emoji import emojize
 def main():
     def options():
         print("---WELCOME TO THE PORTAL---")
@@ -30,16 +31,19 @@ def main():
            def get_user():
               name=input("Name: ").capitalize()
               while name=="":
+                 print(emojize(":thumbs_down:"))
                  print("This is a mandatory field")
                  name=input("Name: ").capitalize()
 
               last_name=input("Last Name: ").capitalize()
               while last_name=="":
+                 print(emojize(":thumbs_down:"))
                  print("This is a mandatory field")
                  last_name=input("What is your last name: ").capitalize()
               
               nationality=input("Nationality: ").capitalize()
               while nationality=="":
+                 print(emojize(":thumbs_down:"))
                  print("This is a mandatory field")
                  nationality=input("What is your nationality: ")
               
@@ -63,6 +67,7 @@ def main():
             while True:
                username=str(input("Enter username: "))
                if re.search(r"^\d.+\.+SmileFF$", username) and len(username)>=8:
+                  print(emojize(":thumbs_up:"))
                   print("Valid Username")
                   with open("Database.csv", "a") as file:
                      writer=csv.DictWriter(file, fieldnames=["User"])
@@ -107,18 +112,21 @@ def main():
                basketball=Basketball("Basketball")
 
                print(hockey.name)
+               print(emojize(":field_hockey:"))
                hockey.price()
                hockey.location()
 
                print("-----")
 
                print(tennis.name)
+               print(emojize(":tennis:"))
                tennis.price()
                tennis.location()
 
                print("-----")
 
                print(basketball.name)
+               print(emojize(":basketball:"))
                basketball.price()
                basketball.location()
 
