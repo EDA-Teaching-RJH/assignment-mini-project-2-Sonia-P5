@@ -175,6 +175,7 @@ def main():
                         file.close
                         digit=random.randint(1, 100)
                         print(f"Congrats you're signed up! You're jersey number will be {digit}")
+                        cowsay.dragon("Welcome to the Hockey Club!")
 
                      elif joining=="T":
                         files=open("members_of_tennis.txt", "a")
@@ -183,6 +184,7 @@ def main():
                         files.close
                         digit=random.randint(1, 100)
                         print(f"Congrats you're signed up! You're jersey number will be {digit}")
+                        cowsay.trex("Welcome to the Tennis Club!")
 
                      elif joining=="B":
                         filessss=open("members_of_basketball", "a")
@@ -191,6 +193,7 @@ def main():
                         filessss.close
                         digit=random.randint(1, 100)
                         print(f"Congrats you're signed up! You're jersey number will be {digit}")
+                        cowsay.stregosaurus("Welcome to the Basketball Club!")
                      
                      else:
                         print("Invalid Input")
